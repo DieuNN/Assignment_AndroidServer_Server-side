@@ -15,6 +15,7 @@ const detailRoute = require('./routes/detail')
 const deleteRoute = require('./routes/delete')
 
 
+
 var app = express();
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use(listRouter)
 app.use(editRouter)
 app.use(detailRoute)
 app.use(deleteRoute)
+
 
 mongoose.connect('mongodb+srv://dieunn:nongngocdieu@cluster1.fkfat.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', error => {
     if (error) throw error;
