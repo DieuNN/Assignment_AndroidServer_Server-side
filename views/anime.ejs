@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+</head>
+<body class="container">
+<% include nav.ejs %>
+<main>
+    <h1 class="text-center" style="margin-top: 3rem;">Hình nền Anime</h1>
+    <div style="display: flex; flex-direction: row; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center; align-items: center">
+        <% for (var i = 0; i < data.length; i++) { %>
+            <div class="card" style="width: 24rem; height: 36rem; box-shadow: 1px 2px 21px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 2px 21px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 2px 21px -1px rgba(0,0,0,0.75); overflow: auto">
+                <img src="<%= data[i].wallpaperLink%>"
+                     class="card-img" alt="..." style="max-height: 26rem; object-fit: cover;min-height: 32rem">
+                <div class="card-body">
+                    <a class="link-primary" href="/detail/<%= data[i].id%>"><%= data[i].wallpaperName%></a>
+
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
+<% include footer.ejs %>
+</body>
+</html>
