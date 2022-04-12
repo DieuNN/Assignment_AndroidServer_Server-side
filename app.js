@@ -13,6 +13,7 @@ const listRouter = require('./routes/list')
 const editRouter = require('./routes/edit')
 const detailRoute = require('./routes/detail')
 const deleteRoute = require('./routes/delete')
+const apiRoute = require('./routes/api')
 
 
 
@@ -36,6 +37,7 @@ app.use(listRouter)
 app.use(editRouter)
 app.use(detailRoute)
 app.use(deleteRoute)
+app.use(apiRoute)
 
 
 mongoose.connect('mongodb+srv://dieunn:nongngocdieu@cluster1.fkfat.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', error => {

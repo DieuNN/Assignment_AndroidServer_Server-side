@@ -39,7 +39,13 @@ router.post('/add', (req, res) => {
     wallpaper.save(err => {
         console.log(err)
     })
-    res.render('list', {message: 'Đóng góp hình ảnh thành công!'})
+
+    Wallpaper.find({}, (error, result) => {
+        if (!error) {
+            res.render('list', {message: 'Đóng góp hình ảnh thành công!', data:Array.from(result)})
+        }
+    })
+
 })
 
 module.exports = router;

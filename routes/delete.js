@@ -7,7 +7,7 @@ router.get('/delete', (req, res) => {
 })
 
 router.post('/delete/:id', (req, res) => {
-    Wallpaper.deleteOne({id: req.params.id},  (err) => {
+    Wallpaper.deleteOne({_id: req.params.id},  (err) => {
         if (err) throw  err
         else {
             Wallpaper.find((error, result) => {
